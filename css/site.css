@@ -1,0 +1,45 @@
+/* reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-weight: 300 !important;
+    font-family: 'Roboto', sans-serif;
+}
+
+
+/* general */
+body {
+    background-color: #EFEFEF;
+}
+
+
+/* page */
+.page-wrapper {
+    margin: 0 auto;
+    width: 960px;
+    max-width: 100%;
+}
+
+
+/* box */
+.box-content {
+    padding:20px;
+    /*background-color: #EFEFEF;*/
+}
+
+
+textarea {
+    background-color:#FAFAFA;
+    border:#EFEFEF solid 1px;
+    color:#333;
+    height:150px;
+    width:100%;
+    font-family: 'Roboto', sans-serif;
+}
+
+
+/* richtext custom style */
+.richText {
+    border: 1px solid #000;
+}
