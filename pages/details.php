@@ -49,6 +49,8 @@ if(isset($_GET['sel_task']))
 <head>
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-139435553-1"></script>
+<script type="text/javascript" src="https://addevent.com/libs/atc/1.6.1/atc.min.js" async defer></script>
+
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
@@ -583,6 +585,17 @@ else
 		<p style="display: inline-block;float: left; margin-right: 20px;"><button>From</button><i class="fa fa-calendar"></i>'.$stDate.'</p>
 
 		<p><button>Till</button><i class="fa fa-calendar"></i>'.$enDate.'</p><br>
+
+		<div title="Add to Calendar" class="addeventatc">
+    		Add to Calendar
+    		<span class="start">'.$stDate.' '.$stTime.'</span>
+   			<span class="end">'.$enDate.' '.$enTime.'</span>
+    		<span class="timezone">India/Delhi</span>
+    		<span class="title">'.$row['event'].'</span>
+    		<span class="location">'.$row['location'].'</span>
+		</div>
+
+		<br /><br />
 
 		<p style="display: inline-block;float: left; margin-right: 20px;"><button>At</button><i class="fa fa-clock-o"></i>'.$stTime.'</p>
 		<p><button>/</button><i class="fa fa-clock-o"></i>'.$enTime.'</p><br>

@@ -285,7 +285,7 @@ $(document).ready(function(){
 
 <!-- HEADER PART -->
  <header>
-  <a href="index.php"><img src="img/mylogo.png" draggable="false" style="width:85px; float: left; padding-left: 15px; height: 60px;"></a>
+  <a href="index.php"><img src="img/mylogo.png" draggable="false" style="width:85px; float: left; padding-left: 15px; padding-right: 15px; height: 60px;"></a>
 
 	<form method="POST" class="mainsearch" action="pages/city.php">
 		<input type="text" name="search" class="event_search" required placeholder="Search Events, Organiser, City etc">
