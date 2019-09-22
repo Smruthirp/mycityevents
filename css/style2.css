@@ -7,7 +7,7 @@ header{
 	background: #FFF;
 	position: fixed;
 	width: 100%;
-	height: 60px;
+	height: 70px;
 	z-index: 1000;
 	background: /* gradient can be an image */
     linear-gradient(to left, #54aac9 0%, #54aac9 12%, #4dc170 47%, #54aac9 100%)left bottom #fff no-repeat; background-size:100% 3px ;

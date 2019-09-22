@@ -208,6 +208,7 @@ $(document).ready(function(){
 		width: 97%;
 		margin-right: 0px;
 		height: auto;
+		padding: 20px;
 		margin-left: 0px;
 		padding-right: 0px;
 		margin-bottom: 20px;
@@ -328,8 +329,66 @@ select{
     font-size: 14px;
     background: #faa732;
 }
+
+.addeventatc{
+    outline: none;
+    color: #FFF !important;
+    background: #4b5159;
+    margin-left: 20px;
+    border-radius: 2px;
+}
+
 #errorEvent{display: none; width: 100%;}
    
+/* Style The Dropdown Button */
+.dropbtn {
+	outline: none;
+	border: none;
+    color: #FFF;
+    background: #4b5159;
+    font-size: 11px;
+    padding: 3px;
+    margin-left: 20px;
+	border-radius: 2px;
+	font-weight: 300;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {
+  background-color: #3e8e41;
+}
 </style>
 <body>
 <header>
@@ -581,21 +640,28 @@ else
 		
 		echo' 
 		<section><img class="image" src="data:image/jpeg;base64,'.base64_encode($row['myimage']).'"/>
-		<div class="text"><h2>'.$row['event'].' <div style="text-transform: lowercase; display: inline-block; width: auto;"> in </div> '.$city.'</h2>
+		<div class="text">
+		
+		<h2>'.$row['event'].' <div style="text-transform: lowercase; display: inline-block; width: auto;"> in </div> '.$city.'</h2>
+		
 		<p style="display: inline-block;float: left; margin-right: 20px;"><button>From</button><i class="fa fa-calendar"></i>'.$stDate.'</p>
 
-		<p><button>Till</button><i class="fa fa-calendar"></i>'.$enDate.'</p><br>
+		<p><button>Till</button><i class="fa fa-calendar"></i>'.$enDate.'
 
-		<div title="Add to Calendar" class="addeventatc">
-    		Add to Calendar
-    		<span class="start">'.$stDate.' '.$stTime.'</span>
-   			<span class="end">'.$enDate.' '.$enTime.'</span>
-    		<span class="timezone">India/Delhi</span>
-    		<span class="title">'.$row['event'].'</span>
-    		<span class="location">'.$row['location'].'</span>
-		</div>
+		<span class="dropdown">
+  			<button class="dropbtn">ADD TO CALENDER</button>
+  			<span class="dropdown-content">
+				  <a target="_blank" 
+				  	href="https://calendar.google.com/calendar/r/eventedit?text='.urlencode($row['event']).'&dates='.date("Ymd", strtotime($sDate)).'T000000Z/'.date("Ymd", strtotime($eDate)).'T000000Z&details=For+details,+link+here:+'."http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]".'&location='.urlencode($row['location']).'">Add to Google calender</a>
+				  <a target="_blank" 
+					  href="ical.php?start='.date("Ymd", strtotime($sDate)).'T000000Z/&end='.date("Ymd", strtotime($eDate)).'T000000Z&summary='.urlencode($row['event']).'">Add to Apple calendar</a>
+				  <a target="_blank" 
+					  href="ical.php?start='.date("Ymd", strtotime($sDate)).'T000000Z/&end='.date("Ymd", strtotime($eDate)).'T000000Z&summary='.urlencode($row['event']).'">Add to Outlook calendar</a>
+				  </span>
+		</span>
+		</p>
+		<br>
 
-		<br /><br />
 
 		<p style="display: inline-block;float: left; margin-right: 20px;"><button>At</button><i class="fa fa-clock-o"></i>'.$stTime.'</p>
 		<p><button>/</button><i class="fa fa-clock-o"></i>'.$enTime.'</p><br>
