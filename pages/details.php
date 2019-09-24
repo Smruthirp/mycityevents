@@ -141,6 +141,7 @@ $(document).ready(function(){
 #phn:focus{
     border: 1px solid #000;
 }
+
  .bookNow{
  	border: none;
  	outline: none;
@@ -222,6 +223,7 @@ $(document).ready(function(){
 		padding-right: 10px;
 	}
 	.container2{
+		background: white;
 		display: block;
 		margin-left: auto;
 		margin-right: auto;
@@ -654,9 +656,9 @@ else
 				  <a target="_blank" 
 				  	href="https://calendar.google.com/calendar/r/eventedit?text='.urlencode($row['event']).'&dates='.date("Ymd", strtotime($sDate)).'T000000Z/'.date("Ymd", strtotime($eDate)).'T000000Z&details=For+details,+link+here:+'."http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]".'&location='.urlencode($row['location']).'">Add to Google calender</a>
 				  <a target="_blank" 
-					  href="ical.php?start='.date("Ymd", strtotime($sDate)).'T000000Z/&end='.date("Ymd", strtotime($eDate)).'T000000Z&summary='.urlencode($row['event']).'">Add to Apple calendar</a>
+					  href="ical.php?start='.date("Ymd", strtotime($sDate)).'T000000Z/&end='.date("Ymd", strtotime($eDate)).'T000000Z&summary='.urlencode($row['event']) .'&discription=For+details,+link+here:+'."http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]".'">Add to Apple calendar</a>
 				  <a target="_blank" 
-					  href="ical.php?start='.date("Ymd", strtotime($sDate)).'T000000Z/&end='.date("Ymd", strtotime($eDate)).'T000000Z&summary='.urlencode($row['event']).'">Add to Outlook calendar</a>
+				  	  href="ical.php?start='.date("Ymd", strtotime($sDate)).'T000000Z/&end='.date("Ymd", strtotime($eDate)).'T000000Z&summary='.urlencode($row['event']) .'&discription=For+details,+link+here:+'."http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]".'">Add to Outlook</a>
 				  </span>
 		</span>
 		</p>

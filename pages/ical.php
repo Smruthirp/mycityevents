@@ -13,6 +13,7 @@ DTSTAMP:".time()."
 DTSTART:".$_GET["start"]."
 DTEND:".$_GET["end"]."
 SUMMARY:".$_GET["summary"]."
+DESCRIPTION:".$_GET["discription"]."
 END:VEVENT
 END:VCALENDAR";
 ?>
